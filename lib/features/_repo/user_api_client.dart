@@ -11,5 +11,3 @@ class UserApiClient {
     );
   }
 }
-
-//User?page = 1 & limit = 30
