@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobxasync/features/_model/user.dart';
 import 'package:mobxasync/features/_store/future_store.dart';
-import 'package:mobxasync/features/users/store/users_store.dart';
+import 'package:mobxasync/features/users/_store/users_store.dart';
+import 'package:mobxasync/features/users/_widget/user_list_item.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -62,16 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   return ListView.builder(
                     itemCount: _usersStore.listUsersFuture?.data?.length ?? 0,
-                    itemBuilder: (context, index) {
-                      User user = _usersStore.listUsersFuture.data[index];
-                      return ListTile(
-                        leading: CircleAvatar(
-                          child: ClipOval(child: Image.network(user.avatar)),
-                        ),
-                        title: Text(user.name),
-                        subtitle: Text(user.email),
-                      );
-                    },
+                    itemBuilder: (context, index) => UserListItem(
+                        user: _usersStore.listUsersFuture.data[index]),
                   );
                 },
               ),

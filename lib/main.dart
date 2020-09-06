@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobxasync/features/_repo/user_repo.dart';
 
 import 'package:mobxasync/features/users/home_screen.dart';
-import 'package:mobxasync/features/users/store/users_store.dart';
+import 'package:mobxasync/features/users/_store/users_store.dart';
 import 'package:provider/provider.dart';
 
 void main() {
