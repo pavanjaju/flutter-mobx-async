@@ -1,4 +1,4 @@
-# mobxasync
+# Flutter + Mobx + Async actions
 
 A new Flutter application.
 
